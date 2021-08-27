@@ -1,12 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: michael.grunewalder
- * Date: 15/03/2018
- * Time: 5:06 PM
+ * API Library for RAMCI reports.
+ * User: Samuel Irwin
+ * Date: 28/08/2021
+ * Time: 4:34 AM
  */
 
-namespace Baygroup\Ramci;
+namespace SamuelIrwin\Ramci;
 
 use Illuminate\Support\Facades\Facade;
 
