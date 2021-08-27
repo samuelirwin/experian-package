@@ -1,0 +1,30 @@
+{
+    "name": "samuelirwin/ramci-package",
+    "description": "Library to pull reports from RAMCI",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Samuel samuelirwin",
+            "email": "samuelirwin1992@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SamuelIrwin\\Ramci\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SamuelIrwin\\Ramci\\RamciServiceProvider"
+            ],
+            "aliases": {
+                "RAMCI": "SamuelIrwin\\Ramci\\RamciApiFacade"
+            }
+        }
+    }
+}
