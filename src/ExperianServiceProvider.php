@@ -1,10 +1,10 @@
 <?php
 
-namespace SamuelIrwin\Ramci;
+namespace SamuelIrwin\Experian;
 
 use Illuminate\Support\ServiceProvider;
 
-class RamciServiceProvider extends ServiceProvider
+class ExperianServiceProvider extends ServiceProvider
 {
     protected $defer = true;
 
@@ -29,26 +29,26 @@ class RamciServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/ramci.php','ramci');
 
-        $this->app->singleton('RamciApi', function ($app){
+        $this->app->singleton('ExperianApi', function ($app){
             $config     =   $app->make('config');
             $username   =   $config->get('ramci.username');
             $password   =   $config->get('ramci.password');
             $serviceURL =   $config->get('ramci.serviceUrl');
 
-            return new RamciApi($username, $password, $serviceURL);
+            return new ExperianApi($username, $password, $serviceURL);
 
         });
 
         /*
-        \App::bind('RamciApi', function()
+        \App::bind('ExperianApi', function()
         {
            //return new \App\Helper\ramciAPI();
-            return new \Baygroup\Ramci\RamciApi();
+            return new \Baygroup\Experian\ExperianApi();
         });
         */
     }
 
     public function provides() {
-        return ['RamciApi'];
+        return ['ExperianApi'];
     }
 }

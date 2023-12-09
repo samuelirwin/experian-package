@@ -1,6 +1,6 @@
-# RAMCI API Package
+# EXPERIAN API Package
 
-This Library allows to query the RAMCI B2B API for registered users. 
+This Library allows to query the EXPERIAN B2B API for registered users. 
 
 You need the access details that were provided to you to make any calls to the API.
 For exact parameters in the data array/JSON, refer to your offline documentation.
@@ -13,9 +13,9 @@ If you do not know what all this is about, then you probably do not need or want
 
 Configuration via the .env file currently allows the following variables to be set:
 
-- RAMCI\_BASE\_URL : the base URL for the API endpoint WITHOUT the command (report/json)
-- RAMCI\_USERNAME : the username to access the API
-- RAMCI\_PASSWORD : the password to ccess the API
+- EXPERIAN\_BASE\_URL : the base URL for the API endpoint WITHOUT the command (report/json)
+- EXPERIAN\_USERNAME : the username to access the API
+- EXPERIAN\_PASSWORD : the password to ccess the API
 
 ###Example:
 if the urls you have to generate the reports are
@@ -24,17 +24,17 @@ if the urls you have to generate the reports are
 
 and your username is demouser with password demoPassword then: 
 
-- RAMCI\_BASE\_URL='http://api.endpoint/url/'
-- RAMCI\_USERNAME=demouser 
-- RAMCI\_PASSWORD=demoPassword
+- EXPERIAN\_BASE\_URL='http://api.endpoint/url/'
+- EXPERIAN\_USERNAME=demouser 
+- EXPERIAN\_PASSWORD=demoPassword
 
 ## Available functions
 
 ```php
-RAMCI::generateJSONFromArray($data)
+EXPERIAN::generateJSONFromArray($data)
 ```
 
-This function takes an array of options for the RAMCI API and generates the JSON code
+This function takes an array of options for the EXPERIAN API and generates the JSON code
 that can be submitted via the API Call. Example:
 ```php
       [
@@ -57,16 +57,16 @@ will generate
 
 
 ```php
-RAMCI::getReport($requestJSON, $command='report', $sendJSON=true)
+EXPERIAN::getReport($requestJSON, $command='report', $sendJSON=true)
 ```
 
-This function tries to retrieve the report data from RAMCI and returns the JSON response;
+This function tries to retrieve the report data from EXPERIAN and returns the JSON response;
 In case of a connectino error, it returns FALSE,
 
 If the request was succesful but the query resulted in data related errors, the returned array will have the fields:
 
-code  : contains the error code received from RAMCI
-error : contains the error message received from RAMCI
+code  : contains the error code received from EXPERIAN
+error : contains the error message received from EXPERIAN
 
 A succesful request returns the JSON of the requested report
 

@@ -1,18 +1,18 @@
 <?php
 /**
- * API Library for RAMCI reports.
+ * API Library for EXPERIAN reports.
  * User: Samuel Irwin
  * Date: 28/08/2021
  * Time: 4:34 AM
  */
 
-namespace SamuelIrwin\Ramci;
+namespace SamuelIrwin\Experian;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 
-class RamciApi
+class ExperianApi
 {
     private $username;
     private $password;
